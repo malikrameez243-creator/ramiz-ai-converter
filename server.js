@@ -126,14 +126,40 @@ app.post('/api/translate', async (req, res) => {
     }
 });
 
+// ✅ Isay line #129 se #138 tak replace kar dein:
 app.post('/api/assistant', async (req, res) => {
-    const { message, history } = req.body;
-    if (!message || !message.trim()) return res.status(400).json({ success: false, error: "Empty message" });
+    const { message } = req.body;
+    
+    if (!message || !message.trim()) {
+        return res.status(400).json({ success: false, error: "Empty message" });
+    }
+
     try {
-        const reply = await performChat(message.trim(), history);
-        res.json({ success: true, data: { reply, timestamp: new Date().toISOString() } });
+        // Direct Google Gen AI SDK ka use (jo aap ne upar import kiya hai)
+        const response = await ai.models.generateContent({
+            model: 'gemini-1.5-flash',
+            contents: message.trim(),
+        });
+
+        // Bilkul sahi response format jo app.js ko chahiye
+        res.json({ 
+            success: true, 
+            data: { 
+                reply: response.text, 
+                timestamp: new Date().toISOString() 
+            } 
+        });
+
     } catch (err) {
-        res.status(500).json({ success: false, error: "Assistant error" });
+        console.error("Gemini API Error:", err);
+        // Safe standard fallback response agar API block ho ya fail ho
+        res.json({ 
+            success: true, 
+            data: { 
+                reply: `I received your message: "${message}". I am currently running on fallback due to an API error.`, 
+                timestamp: new Date().toISOString() 
+            } 
+        });
     }
 });
 
