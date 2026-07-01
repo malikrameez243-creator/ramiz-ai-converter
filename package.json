@@ -1,0 +1,21 @@
+{
+  "name": "ramiz-ai-converter",
+  "version": "1.0.0",
+  "description": "RAMIZ AI CONVERTER - Premium multi-tool dashboard",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon server.js"
+  },
+  "author": "Ramiz",
+  "license": "MIT",
+  "dependencies": {
+    "@google/genai": "^2.10.0",
+    "cors": "^2.8.5",
+    "dotenv": "^17.4.2",
+    "express": "^4.19.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.0"
+  }
+}

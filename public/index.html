@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RAMIZ AI CONVERTER — Premium AI Dashboard</title>
+  <meta name="description" content="A premium multi-tool AI dashboard for translation, calendar, notes, and tasks." />
+<meta name="google-site-verification" content="270CXpnVcr3qo7UiJXqdbkN_BEH6YfHY0Ieep9-08WA" />
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+  <!-- ============ SIDEBAR NAVIGATION ============ -->
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-header">
+      <div class="brand">
+        <div class="brand-logo">
+          <i class="fas fa-bolt"></i>
+        </div>
+        <div class="brand-text">
+          <h1>RAMIZ AI</h1>
+          <span>CONVERTER</span>
+        </div>
+      </div>
+    </div>
+
+    <nav class="sidebar-nav">
+      <a href="#translator" class="nav-item active" data-section="translator">
+        <i class="fas fa-language"></i>
+        <span>Translator</span>
+      </a>
+      <a href="#calendar" class="nav-item" data-section="calendar">
+        <i class="fas fa-calendar-days"></i>
+        <span>Calendar</span>
+      </a>
+      <a href="#notes" class="nav-item" data-section="notes">
+        <i class="fas fa-note-sticky"></i>
+        <span>Notes</span>
+      </a>
+      <a href="#tasks" class="nav-item" data-section="tasks">
+        <i class="fas fa-list-check"></i>
+        <span>Tasks</span>
+      </a>
+    </nav>
+
+    <div class="sidebar-footer">
+      <button id="themeToggle" class="theme-toggle" aria-label="Toggle theme">
+        <i class="fas fa-moon"></i>
+        <span>Theme</span>
+      </button>
+      <div class="user-card">
+        <div class="avatar">R</div>
+        <div class="user-info">
+          <div class="user-name">Ramiz</div>
+          <div class="user-plan">Pro Plan</div>
+        </div>
+      </div>
+    </div>
+  </aside>
+
+  <!-- ============ MAIN CONTENT ============ -->
+  <main class="main-content">
+
+    <!-- Top Bar -->
+    <header class="topbar">
+      <button id="sidebarToggle" class="icon-btn mobile-only" aria-label="Toggle menu">
+        <i class="fas fa-bars"></i>
+      </button>
+      <div class="topbar-title">
+        <h2 id="sectionTitle">Translator</h2>
+        <p id="sectionSubtitle">Real-time AI-powered language conversion</p>
+      </div>
+      <div class="topbar-actions">
+        <button class="icon-btn" aria-label="Search">
+          <i class="fas fa-search"></i>
+        </button>
+        <button class="icon-btn" aria-label="Notifications">
+          <i class="fas fa-bell"></i>
+          <span class="badge-dot"></span>
+        </button>
+      </div>
+    </header>
+
+    <!-- ============================================== -->
+    <!-- ============ TRANSLATOR SECTION ============ -->
+    <!-- ============================================== -->
+    <section id="translator" class="section active">
+      <div class="translator-grid">
+        <!-- Input Panel -->
+        <div class="panel">
+          <div class="panel-header">
+            <select id="fromLang" class="lang-select" aria-label="From language">
+              <!-- Populated by JS -->
+            </select>
+            <span class="char-count"><span id="charCount">0</span> / 5000</span>
+          </div>
+          <textarea id="sourceText" class="text-area" placeholder="Type or paste your text here..." maxlength="5000"></textarea>
+          <div class="panel-footer">
+            <button id="clearSource" class="btn-ghost"><i class="fas fa-eraser"></i> Clear</button>
+            <button id="speakSource" class="btn-ghost"><i class="fas fa-volume-high"></i> Speak</button>
+          </div>
+        </div>
+
+        <!-- Swap Button -->
+        <div class="swap-controls">
+          <button id="swapBtn" class="swap-btn" aria-label="Swap languages">
+            <i class="fas fa-arrow-right-arrow-left"></i>
+          </button>
+        </div>
+
+        <!-- Output Panel -->
+        <div class="panel">
+          <div class="panel-header">
+            <select id="toLang" class="lang-select" aria-label="To language">
+              <!-- Populated by JS -->
+            </select>
+            <span id="translateStatus" class="status-text">Ready</span>
+          </div>
+          <div id="targetText" class="text-area output" contenteditable="false" data-placeholder="Translation will appear here..."></div>
+          <div class="panel-footer">
+            <button id="copyTarget" class="btn-ghost"><i class="fas fa-copy"></i> Copy</button>
+            <button id="speakTarget" class="btn-ghost"><i class="fas fa-volume-high"></i> Speak</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Stats -->
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-icon"><i class="fas fa-globe"></i></div>
+          <div class="stat-info">
+            <div class="stat-value" id="statLangs">36</div>
+            <div class="stat-label">Languages</div>
+          </div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon"><i class="fas fa-bolt"></i></div>
+          <div class="stat-info">
+            <div class="stat-value">Real-time</div>
+            <div class="stat-label">Translation</div>
+          </div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon"><i class="fas fa-shield-halved"></i></div>
+          <div class="stat-info">
+            <div class="stat-value">Secure</div>
+            <div class="stat-label">Encryption</div>
+          </div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon"><i class="fas fa-infinity"></i></div>
+          <div class="stat-info">
+            <div class="stat-value">Unlimited</div>
+            <div class="stat-label">Usage</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================== -->
+    <!-- ============ CALENDAR SECTION ============== -->
+    <!-- ============================================== -->
+    <section id="calendar" class="section">
+      <div class="calendar-wrapper">
+        <div class="calendar-container">
+          <div class="calendar-header">
+            <button id="prevMonth" class="icon-btn"><i class="fas fa-chevron-left"></i></button>
+            <h3 id="monthYear"></h3>
+            <button id="nextMonth" class="icon-btn"><i class="fas fa-chevron-right"></i></button>
+          </div>
+          <div class="calendar-weekdays">
+            <div>Sun</div><div>Mon</div><div>Tue</div><div>Wed</div><div>Thu</div><div>Fri</div><div>Sat</div>
+          </div>
+          <div id="calendarDays" class="calendar-days"></div>
+        </div>
+
+        <div class="events-panel">
+          <div class="events-header">
+            <h4>Events</h4>
+            <span id="selectedDate" class="date-badge"></span>
+          </div>
+          <div class="event-input-group">
+            <input id="eventTitle" type="text" placeholder="Event title..." />
+            <input id="eventTime" type="time" />
+            <button id="addEvent" class="btn-primary"><i class="fas fa-plus"></i> Add</button>
+          </div>
+          <div id="eventsList" class="events-list"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================== -->
+    <!-- ============ NOTES SECTION ================== -->
+    <!-- ============================================== -->
+    <section id="notes" class="section">
+      <div class="section-toolbar">
+        <div class="search-box">
+          <i class="fas fa-search"></i>
+          <input id="notesSearch" type="text" placeholder="Search notes..." />
+        </div>
+        <button id="newNoteBtn" class="btn-primary"><i class="fas fa-plus"></i> New Note</button>
+      </div>
+
+      <!-- Note Editor Modal -->
+      <div id="noteEditor" class="modal hidden">
+        <div class="modal-content">
+          <div class="modal-header">
+            <input id="noteTitle" type="text" placeholder="Note title..." class="note-title-input" />
+            <button id="closeNoteEditor" class="icon-btn"><i class="fas fa-times"></i></button>
+          </div>
+          <textarea id="noteContent" placeholder="Start writing your thoughts..." class="note-content-input"></textarea>
+          <div class="modal-footer">
+            <span id="noteTimestamp" class="text-muted"></span>
+            <div class="flex gap-2">
+              <button id="cancelNote" class="btn-ghost">Cancel</button>
+              <button id="saveNote" class="btn-primary"><i class="fas fa-save"></i> Save</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="notesGrid" class="notes-grid"></div>
+    </section>
+
+    <!-- ============================================== -->
+    <!-- ============ TASKS SECTION ================== -->
+    <!-- ============================================== -->
+    <section id="tasks" class="section">
+      <div class="section-toolbar">
+        <div class="filter-group">
+          <button class="filter-chip active" data-filter="all">All</button>
+          <button class="filter-chip" data-filter="pending">Pending</button>
+          <button class="filter-chip" data-filter="completed">Completed</button>
+        </div>
+        <div class="task-stats">
+          <span id="taskProgress">0 / 0</span> completed
+        </div>
+      </div>
+
+      <div class="progress-bar-wrapper">
+        <div id="progressBar" class="progress-bar"></div>
+      </div>
+
+      <div class="task-input-group">
+        <input id="taskInput" type="text" placeholder="Add a new task..." />
+        <button id="addTask" class="btn-primary"><i class="fas fa-plus"></i> Add</button>
+      </div>
+
+      <div id="tasksList" class="tasks-list"></div>
+    </section>
+
+  </main>
+
+  <!-- ============ TOAST CONTAINER ============ -->
+  <div id="toastContainer" class="toast-container"></div>
+
+  <!-- Scripts -->
+  <script src="app.js"></script>
+  <!-- ============ RAMIZ AI ASSISTANT ============ -->
+<!-- Launcher Button -->
+<button id="chatLauncher" class="chat-launcher" aria-label="Open AI Assistant">
+    <i class="fas fa-robot"></i>
+    <span class="launcher-pulse"></span>
+</button>
+<div id="chatWindow" class="chat-window hidden">
+  <div class="chat-header">
+    <div class="chat-header-info">
+      <div class="chat-avatar">
+        <i class="fas fa-robot"></i>
+        <span class="status-dot"></span>
+      </div>
+      <div>
+        <h3>🤖 Ramiz AI Assistant</h3>
+        <span class="chat-status"><span class="status-pulse"></span> Online · Multilingual</span>
+      </div>
+    </div>
+    <div class="chat-header-actions">
+      <button id="chatClear" class="chat-icon-btn" aria-label="Clear chat" title="Clear chat">
+        <i class="fas fa-trash-can"></i>
+      </button>
+      <button id="chatClose" class="chat-icon-btn" aria-label="Close chat" title="Close">
+        <i class="fas fa-xmark"></i>
+      </button>
+    </div>
+  </div>
+
+  <div id="chatMessages" class="chat-messages">
+    <!-- Messages injected by JS -->
+  </div>
+
+  <div class="chat-quick-replies" id="quickReplies">
+    <button class="quick-reply" data-msg="Hello! Who are you?">👋 Hello</button>
+    <button class="quick-reply" data-msg="What can you do?">⚡ Features</button>
+    <button class="quick-reply" data-msg="How do I use the translator?">🌐 Translator</button>
+    <button class="quick-reply" data-msg="ہیلو، آپ کیسے ہیں؟">🇵🇰 اردو</button>
+  </div>
+
+  <form id="chatForm" class="chat-input-area">
+    <button type="button" id="chatEmoji" class="chat-input-btn" aria-label="Emoji">
+      <i class="fas fa-face-smile"></i>
+    </button>
+    <textarea
+      id="chatInput"
+      class="chat-input"
+      placeholder="Type in any language…"
+      rows="1"
+      maxlength="4000"
+    ></textarea>
+    <button type="submit" id="chatSend" class="chat-send-btn" aria-label="Send message">
+      <i class="fas fa-paper-plane"></i>
+    </button>
+  </form>
+</div>
+</body>
+</html>

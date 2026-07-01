@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy — RAMIZ AI CONVERTER</title>
+  <meta name="description" content="Privacy Policy for RAMIZ AI CONVERTER. Learn how we collect, use, and protect your data in compliance with Google AdSense standards." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://ramiz-ai-converter.vercel.app/privacy-policy.html" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+  <style>
+    /* ============ DESIGN TOKENS ============ */
+    :root[data-theme="dark"] {
+      --bg-primary: #0a0e1a;
+      --bg-secondary: #111827;
+      --bg-tertiary: #1a2235;
+      --bg-elevated: #1f2a44;
+      --border-color: rgba(255,255,255,0.08);
+      --border-strong: rgba(255,255,255,0.15);
+      --text-primary: #f1f5f9;
+      --text-secondary: #94a3b8;
+      --text-muted: #64748b;
+      --accent: #6366f1;
+      --accent-light: #818cf8;
+      --accent-glow: rgba(99,102,241,0.4);
+      --success: #10b981;
+      --shadow-md: 0 8px 24px rgba(0,0,0,0.4);
+      --shadow-lg: 0 20px 50px rgba(0,0,0,0.5);
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Inter', -apple-system, sans-serif;
+      background: var(--bg-primary);
+      color: var(--text-primary);
+      line-height: 1.7;
+      min-height: 100vh;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: var(--accent-light); text-decoration: none; transition: color 0.2s; }
+    a:hover { color: var(--accent); }
+
+    /* ============ HEADER ============ */
+    .site-header {
+      position: sticky; top: 0; z-index: 50;
+      background: rgba(10, 14, 26, 0.85);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border-color);
+    }
+    .nav-container {
+      max-width: 1280px; margin: 0 auto;
+      padding: 1rem 1.5rem;
+      display: flex; justify-content: space-between; align-items: center;
+    }
+    .brand { display: flex; align-items: center; gap: 0.75rem; text-decoration: none; color: var(--text-primary); }
+    .brand-logo {
+      width: 40px; height: 40px; border-radius: 11px;
+      background: linear-gradient(135deg, var(--accent), var(--accent-light));
+      display: flex; align-items: center; justify-content: center;
+      color: white; font-size: 1.1rem;
+      box-shadow: 0 0 20px var(--accent-glow);
+    }
+    .brand-text h1 { font-size: 1rem; font-weight: 800; letter-spacing: -0.02em; line-height: 1; }
+    .brand-text span { font-size: 0.62rem; color: var(--text-muted); letter-spacing: 0.2em; font-weight: 600; }
+    .nav-links { display: flex; gap: 1.75rem; align-items: center; }
+    .nav-links a {
+      color: var(--text-secondary); font-weight: 500; font-size: 0.9rem;
+      position: relative; transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--text-primary); }
+    .nav-links a::after {
+      content: ''; position: absolute; bottom: -6px; left: 50%;
+      transform: translateX(-50%); width: 0; height: 2px;
+      background: linear-gradient(90deg, var(--accent), var(--accent-light));
+      transition: width 0.25s; border-radius: 2px;
+    }
+    .nav-links a:hover::after, .nav-links a.active::after { width: 100%; }
+    .nav-cta {
+      padding: 0.55rem 1.1rem; border-radius: 9px;
+      background: linear-gradient(135deg, var(--accent), var(--accent-light));
+      color: white !important; font-weight: 600 !important; font-size: 0.85rem !important;
+      box-shadow: 0 4px 12px var(--accent-glow); transition: transform 0.2s;
+    }
+    .nav-cta:hover { transform: translateY(-1px); }
+    .nav-cta::after { display: none !important; }
+    .menu-toggle { display: none; background: none; border: none; color: var(--text-primary); font-size: 1.2rem; cursor: pointer; }
+
+    /* ============ HERO ============ */
+    .page-hero {
+      padding: 5rem 1.5rem 3rem;
+      text-align: center;
+      background: radial-gradient(ellipse at top, rgba(99,102,241,0.12), transparent 60%);
+      border-bottom: 1px solid var(--border-color);
+    }
+    .page-hero .badge {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      padding: 0.4rem 0.9rem; border-radius: 999px;
+      background: rgba(99,102,241,0.12); border: 1px solid rgba(99,102,241,0.25);
+      color: var(--accent-light); font-size: 0.75rem; font-weight: 600;
+      letter-spacing: 0.05em; text-transform: uppercase;
+      margin-bottom: 1.25rem;
+    }
+    .page-hero h2 {
+      font-size: clamp(2.25rem, 5vw, 3.5rem); font-weight: 800;
+      letter-spacing: -0.03em; line-height: 1.1; margin-bottom: 1rem;
+      background: linear-gradient(135deg, #f1f5f9, #94a3b8);
+      -webkit-background-clip: text; background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .page-hero p {
+      color: var(--text-secondary); font-size: 1.05rem;
+      max-width: 620px; margin: 0 auto;
+    }
+    .page-meta {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      margin-top: 1.5rem; padding: 0.5rem 1rem;
+      background: var(--bg-tertiary); border-radius: 8px;
+      font-size: 0.8rem; color: var(--text-muted);
+      font-family: 'JetBrains Mono', monospace;
+    }
+
+    /* ============ CONTENT ============ */
+    .content-wrap {
+      max-width: 900px; margin: 0 auto;
+      padding: 4rem 1.5rem;
+    }
+    .legal-card {
+      background: var(--bg-secondary);
+      border: 1px solid var(--border-color);
+      border-radius: 18px;
+      padding: 2.5rem;
+      box-shadow: var(--shadow-md);
+    }
+    .legal-section { margin-bottom: 2.5rem; }
+    .legal-section:last-child { margin-bottom: 0; }
+    .legal-section h3 {
+      display: flex; align-items: center; gap: 0.75rem;
+      font-size: 1.35rem; font-weight: 700; margin-bottom: 1rem;
+      color: var(--text-primary); letter-spacing: -0.01em;
+    }
+    .legal-section h3 .icon {
+      width: 36px; height: 36px; border-radius: 9px;
+      background: linear-gradient(135deg, rgba(99,102,241,0.18), rgba(99,102,241,0.06));
+      display: flex; align-items: center; justify-content: center;
+      color: var(--accent-light); font-size: 0.9rem;
+    }
+    .legal-section h4 {
+      font-size: 1.05rem; font-weight: 600;
+      color: var(--text-primary); margin: 1.25rem 0 0.6rem;
+    }
+    .legal-section p, .legal-section li {
+      color: var(--text-secondary); font-size: 0.95rem;
+      margin-bottom: 0.75rem;
+    }
+    .legal-section ul { padding-left: 1.5rem; margin-bottom: 1rem; }
+    .legal-section ul li::marker { color: var(--accent-light); }
+    .legal-section strong { color: var(--text-primary); font-weight: 600; }
+    .highlight-box {
+      padding: 1.25rem 1.5rem;
+      background: linear-gradient(135deg, rgba(16,185,129,0.08), rgba(16,185,129,0.02));
+      border-left: 3px solid var(--success);
+      border-radius: 8px;
+      margin: 1rem 0;
+    }
+    .highlight-box p { margin: 0; color: var(--text-primary); }
+
+    /* ============ FOOTER ============ */
+    .site-footer {
+      background: var(--bg-secondary);
+      border-top: 1px solid var(--border-color);
+      padding: 3rem 1.5rem 1.5rem;
+      margin-top: 4rem;
+    }
+    .footer-grid {
+      max-width: 1280px; margin: 0 auto;
+      display: grid; grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 2.5rem; margin-bottom: 2.5rem;
+    }
+    .footer-brand p {
+      color: var(--text-secondary); font-size: 0.9rem; margin: 1rem 0 1.25rem; max-width: 320px;
+    }
+    .social-row { display: flex; gap: 0.6rem; }
+    .social-icon {
+      width: 38px; height: 38px; border-radius: 50%;
+      background: var(--bg-tertiary); color: var(--text-secondary);
+      display: inline-flex; align-items: center; justify-content: center;
+      transition: all 0.2s;
+    }
+    .social-icon:hover { background: var(--accent); color: white; transform: translateY(-2px); }
+    .footer-col h5 {
+      font-size: 0.95rem; font-weight: 700; color: var(--text-primary);
+      margin-bottom: 1rem;
+    }
+    .footer-col ul { list-style: none; }
+    .footer-col ul li { margin-bottom: 0.55rem; }
+    .footer-col ul a {
+      color: var(--text-secondary); font-size: 0.875rem; transition: color 0.2s;
+    }
+    .footer-col ul a:hover { color: var(--accent-light); }
+    .footer-bottom {
+      max-width: 1280px; margin: 0 auto;
+      padding-top: 1.5rem; border-top: 1px solid var(--border-color);
+      text-align: center; color: var(--text-muted); font-size: 0.825rem;
+    }
+
+    /* ============ RESPONSIVE ============ */
+    @media (max-width: 768px) {
+      .nav-links { display: none; position: absolute; top: 100%; right: 1rem; left: 1rem;
+        flex-direction: column; gap: 0.5rem; padding: 1rem;
+        background: var(--bg-secondary); border: 1px solid var(--border-color); border-radius: 12px;
+        align-items: stretch;
+      }
+      .nav-links.open { display: flex; }
+      .menu-toggle { display: block; }
+      .footer-grid { grid-template-columns: 1fr 1fr; gap: 2rem; }
+      .legal-card { padding: 1.75rem 1.25rem; }
+      .page-hero { padding: 3.5rem 1.25rem 2rem; }
+    }
+    @media (max-width: 480px) {
+      .footer-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ============ HEADER ============ -->
+  <header class="site-header">
+    <div class="nav-container">
+      <a href="/" class="brand">
+        <div class="brand-logo"><i class="fas fa-bolt"></i></div>
+        <div class="brand-text">
+          <h1>RAMIZ AI</h1>
+          <span>CONVERTER</span>
+        </div>
+      </a>
+      <nav class="nav-links" id="navLinks">
+        <a href="/">Home</a>
+        <a href="/#translator">Translator</a>
+        <a href="/#calendar">Calendar</a>
+        <a href="/#notes">Notes</a>
+        <a href="/#tasks">Tasks</a>
+        <a href="contact-us.html" class="nav-cta">Contact</a>
+      </nav>
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu"><i class="fas fa-bars"></i></button>
+    </div>
+  </header>
+
+  <!-- ============ HERO ============ -->
+  <section class="page-hero">
+    <div class="badge"><i class="fas fa-shield-halved"></i> Legal & Compliance</div>
+    <h2>Privacy Policy</h2>
+    <p>Your privacy matters. This policy explains how RAMIZ AI CONVERTER collects, uses, and protects your information in full compliance with Google AdSense standards.</p>
+    <div class="page-meta"><i class="fas fa-calendar"></i> Last Updated: June 28, 2026</div>
+  </section>
+
+  <!-- ============ CONTENT ============ -->
+  <main class="content-wrap">
+    <article class="legal-card">
+
+      <section class="legal-section">
+        <h3><span class="icon"><i class="fas fa-circle-info"></i></span> Introduction</h3>
+        <p>Welcome to <strong>RAMIZ AI CONVERTER</strong> (the "Service"), accessible at <strong>https://ramiz-ai-converter.vercel.app</strong>. We are committed to protecting your personal information and your right to privacy. This Privacy Policy explains what information we collect, how we use it, and what rights you have in relation to it.</p>
+        <p>By accessing or using our Service, you agree to the collection and use of information in accordance with this policy. If you do not agree with the terms of this policy, please do not access the Service.</p>
+      </section>
+
+      <section class="legal-section">
+        <h3><span class="icon"><i class="fas fa-database"></i></span> Information We Collect</h3>
+        <h4>1. Personal Information You Voluntarily Provide</h4>
+        <p>When you contact us via the contact form, we may collect:</p>
+        <ul>
+          <li>Your name</li>
+          <li>Email address</li>
+          <li>Phone number (optional)</li>
+          <li>Any message content you voluntarily submit</li>
+        </ul>
+        <h4>2. Automatically Collected Information (Log Files)</h4>
+        <p>Like most websites, RAMIZ AI CONVERTER uses log files. These files log visitors when they browse the site. The information collected includes IP addresses, browser type, Internet Service Provider (ISP), date and time stamp, referring/exit pages, and number of clicks. This data is used for analyzing trends, administering the site, tracking user movement, and gathering demographic information. None of this information is linked to any personally identifiable information.</p>
+        <h4>3. Translation & Tool Inputs</h4>
+        <p>Text you input into the Translator, Notes, Tasks, or Calendar tools is processed to deliver the requested functionality. We do <strong>not store</strong> translation input on our servers beyond the immediate request lifecycle, and we do <strong>not use</strong> user-submitted content to train AI models.</p>
+      </section>
+
+      <section class="legal-section">
+        <h3><span class="icon"><i class="fas fa-cookie-bite"></i></span> Cookies & Web Beacons</h3>
+        <p>RAMIZ AI CONVERTER uses "cookies" to enhance user experience. Cookies are small text files stored on your device. You may refuse cookies through your browser settings, though this may limit certain functionality.</p>
+        <h4>Third-Party Cookies (Google AdSense)</h4>
+        <p>We use <strong>Google AdSense</strong>, a third-party advertising service provided by Google. AdSense uses cookies to serve ads based on a user's prior visits to our website or other websites on the Internet. Google may use advertising cookies to serve ads based on your visit to our site and/or other sites on the Internet.</p>
+        <p>Users may opt out of personalized advertising by visiting <a href="https://www.google.com/settings/ads" target="_blank" rel="noopener noreferrer">Google Ads Settings</a>. Third-party vendors, including Google, use cookies to serve ads based on a user's prior visits to our website.</p>
+      </section>
+
+      <section class="legal-section">
+        <h3><span class="icon"><i class="fas fa-rectangle-ad"></i></span> Google AdSense & Advertising</h3>
+        <p>RAMIZ AI CONVERTER participates in the Google AdSense program, a service for the inclusion of advertisements on our website. AdSense uses DoubleClick cookies (DART cookies) to serve ads. These cookies may be used by Google or its partners to serve ads based on your visit to our site and/or other sites on the Internet.</p>
+        <p>You can opt out of the use of the DART cookie by visiting the <a href="https://www.google.com/privacy_ads.html" target="_blank" rel="noopener noreferrer">Google Ad and Content Network privacy policy</a>.</p>
+        <p>Some of the ads on our site may be served by third-party ad networks or affiliates. These companies may use cookies or similar technologies to collect non-personally identifiable information during your visit to this site to provide advertising about goods and services that may interest you.</p>
+      </section>
+
+      <section class="legal-section">
+        <h3><span class="icon"><i class="fas fa-user-shield"></i></span> How We Use Your Information</h3>
+        <p>We use the information we collect for the following purposes:</p>
+        <ul>
+          <li>To provide, operate, and maintain our Service</li>
+          <li>To improve, personalize, and expand our Service</li>
+          <li>To understand and analyze how you use our Service</li>
+          <li>To develop new products, services, features, and functionality</li>
+          <li>To respond to your comments, questions, and customer service requests</li>
+          <li>To send you updates, newsletters, and marketing communications (with your consent)</li>
+          <li>To detect and prevent fraud, abuse, or security issues</li>
+          <li>To comply with legal obligations</li>
+        </ul>
+      </section>
+
+      <section class="legal-section">
+        <h3><span class="icon"><i class="fas fa-handshake"></i></span> Data Sharing & Third Parties</h3>
+        <div class="highlight-box">
+          <p><strong><i class="fas fa-check-circle" style="color:var(--success);margin-right:0.4rem"></i> We do not sell, trade, or rent your personal identification information to others.</strong></p>
+        </div>
+        <p>We may share generic aggregated demographic information (not linked to any personal identification information) with our business partners, trusted affiliates, and advertisers for the purposes outlined above. We may also share information with:</p>
+        <ul>
+          <li><strong>Service Providers:</strong> Vercel (hosting), Google (analytics & ads), translation API providers</li>
+          <li><strong>Legal Requirements:</strong> When required to comply with applicable law or governmental requests</li>
+          <li><strong>Protection of Rights:</strong> To protect our rights, privacy, safety, or property</li>
+        </ul>
+      </section>
+
+      <section class="legal-section">
+        <h3><span class="icon"><i class="fas fa-lock"></i></span> Data Protection & Security</h3>
+        <p>We implement industry-standard technical and organizational security measures to protect your personal information. However, no method of transmission over the Internet or electronic storage is 100% secure. While we strive to use commercially acceptable means to protect your data, we cannot guarantee absolute security.</p>
+        <p>Your notes and tasks are stored <strong>locally in your browser</strong> via localStorage and are not transmitted to our servers unless explicitly stated.</p>
+      </section>
+
+      <section class="legal-section">
+        <h3><span class="icon"><i class="fas fa-user-check"></i></span> Your Data Rights (GDPR / CCPA)</h3>
+        <p>Depending on your location, you have the right to:</p>
+        <ul>
+          <li><strong>Access</strong> the personal data we hold about you</li>
+          <li><strong>Request correction</strong> of inaccurate personal data</li>
+          <li><strong>Request deletion</strong> of your personal data</li>
+          <li><strong>Object to processing</strong> or request data portability</li>
+          <li><strong>Withdraw consent</strong> at any time where processing is based on consent</li>
+        </ul>
+        <p>To exercise any of these rights, please contact us at <strong>malikrameez243@gmail.com</strong>.</p>
+      </section>
+
+      <section class="legal-section">
+        <h3><span class="icon"><i class="fas fa-child"></i></span> Children's Information</h3>
+        <p>Our Service is not directed to anyone under the age of 13. We do not knowingly collect personally identifiable information from children under 13. If you are a parent or guardian and you are aware that your child has provided us with personal data, please contact us so that we can take necessary actions.</p>
+      </section>
+
+      <section class="legal-section">
+        <h3><span class="icon"><i class="fas fa-link"></i></span> External Links</h3>
+        <p>Our Service may contain links to external sites not operated by us. We strongly advise you to review the privacy policy of every site you visit. We have no control over and assume no responsibility for the content, privacy policies, or practices of any third-party sites or services.</p>
+      </section>
+
+      <section class="legal-section">
+        <h3><span class="icon"><i class="fas fa-sync"></i></span> Changes to This Policy</h3>
+        <p>We may update our Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page and updating the "Last updated" date. You are advised to review this Privacy Policy periodically for any changes.</p>
+      </section>
+
+      <section class="legal-section">
+        <h3><span class="icon"><i class="fas fa-envelope"></i></span> Contact Us</h3>
+        <p>If you have any questions about this Privacy Policy, please contact us:</p>
+        <ul>
+          <li><strong>Email:</strong> malikrameez243@gmail.com</li>
+          <li><strong>Phone:</strong> 0335-3949762</li>
+          <li><strong>Website:</strong> https://ramiz-ai-converter.vercel.app</li>
+        </ul>
+      </section>
+
+    </article>
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="site-footer">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="/" class="brand">
+          <div class="brand-logo"><i class="fas fa-bolt"></i></div>
+          <div class="brand-text"><h1>RAMIZ AI</h1><span>CONVERTER</span></div>
+        </a>
+        <p>A premium AI-powered dashboard for translation, calendar management, note-taking, and task tracking — built for modern productivity.</p>
+        <div class="social-row">
+          <a href="#" class="social-icon" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+          <a href="#" class="social-icon" aria-label="GitHub"><i class="fab fa-github"></i></a>
+          <a href="#" class="social-icon" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#" class="social-icon" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h5>Product</h5>
+        <ul>
+          <li><a href="/#translator">Translator</a></li>
+          <li><a href="/#calendar">Calendar</a></li>
+          <li><a href="/#notes">Notes</a></li>
+          <li><a href="/#tasks">Tasks</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Company</h5>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="contact-us.html">Contact</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Blog</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Legal</h5>
+        <ul>
+          <li><a href="privacy-policy.html">Privacy Policy</a></li>
+          <li><a href="terms-conditions.html">Terms & Conditions</a></li>
+          <li><a href="#">Cookie Policy</a></li>
+          <li><a href="#">Disclaimer</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      © 2025 RAMIZ AI CONVERTER. All rights reserved. Built with <i class="fas fa-heart" style="color:var(--accent)"></i> for productivity.
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('menuToggle')?.addEventListener('click', () => {
+      document.getElementById('navLinks')?.classList.toggle('open');
+    });
+  </script>
+</body>
+</html>
