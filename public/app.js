@@ -744,9 +744,10 @@ Try asking me anything, or use the quick replies below!`;
       const response = await fetch('/api/assistant', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
+       // ✅ Isay aise replace kar dein:
         body: JSON.stringify({
-          message,
-          history: chatState.history.slice(0, -1) // Exclude the message we just added
+         message,
+        history: [] // History ko filterout kar ke khali array bhej dein
         })
       });
 
