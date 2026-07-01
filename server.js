@@ -11,7 +11,7 @@ const PORT = process.env.PORT || 3000;
 // Nayi configuration aap ki nayi key ke sath
 // Initialize Google Gen AI using environment variable
 const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY });
-console.log("API Key:", process.env.GEMINI_API_KEY);
+console.log("API Key Loaded:", !!process.env.GEMINI_API_KEY);
 
 // Middleware
 app.use(cors());
@@ -136,10 +136,10 @@ app.post('/api/assistant', async (req, res) => {
 
     try {
         // Direct Google Gen AI SDK ka use (jo aap ne upar import kiya hai)
-        const response = await ai.models.generateContent({
-            model: 'gemini-1.5-flash',
-            contents: message.trim(),
-        });
+       const response = await ai.models.generateContent({
+    model: 'gemini-2.5-flash',
+    contents: message.trim(),
+});
 
         // Bilkul sahi response format jo app.js ko chahiye
         res.json({ 
